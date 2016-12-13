@@ -168,7 +168,7 @@
     command: icinga2 node wizard
     responses:
       'Please specify if this is a satellite setup ': 'n'
-      'Please specifiy the common name': "{{ ansible_fqdn }}"
+      'Please specify the common name': 'monitoring.local'
       'Bind Host': ''
       'Bind Port': ''
     echo: yes
