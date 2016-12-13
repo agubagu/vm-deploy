@@ -67,6 +67,8 @@
   with_items:
     - httpd
     - php
+    - php-pdo
+    - php-mysql
     - icingaweb2
     - icingacli
     - nagios-plugins-all
