@@ -1,0 +1,25 @@
+---
+
+# Playbook for application deploy
+- name: create /usr/local/java_http
+  file: path=/usr/local/java_http state=directory owner=root group=root mode=755
+
+- name: Getting needed application version from git
+  git:
+    repo: "{{ git_repo }}"
+    dest: /usr/local/java_http
+    version: "{{ app_version }}"
+  register: version
+
+- name: creating systemctl service file
+  template: src=java-http.service.j2 dest=/usr/lib/systemd/system/java-http.service owner=root group=root mode=0644
+  register: filechange 
+
+- name: reloading systemctl
+  command: systemctl daemon-reload
+  when: filechange.changed
+
+- name: enabling and starting service
+  service: name=java-http state=restarted enabled=yes
+  when: version.changed
+

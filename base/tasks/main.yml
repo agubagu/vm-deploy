@@ -1,0 +1,26 @@
+---
+- name: Downloading the EPEL repository definitions.
+  get_url: url=http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm dest={{ download_dir }}/epel-release-6-8.noarch.rpm
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "6"
+
+- name: Downloading and enable the EPEL repository definitions.
+  yum: name={{ download_dir }}//epel-release-6-8.noarch.rpm state=present
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "6"
+
+- name: Downloading and enable the EPEL repository definitions.
+  yum: name=epel-release state=present
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+
+- name: Install libselinux-python bindings
+  yum: name=libselinux-python state=present
+  tags: selinux
+
+- name: Disable SElinux
+  selinux: state=disabled
+  tags: selinux
+
+- name: Install necessary packages
+  yum: name={{ item }}
+  with_items: "{{ packages }}"
+
+

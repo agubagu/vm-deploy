@@ -1,0 +1,6 @@
+---
+
+- name: Install Java openjdk
+  yum: name=java-{{ java_version }}-openjdk.{{ ansible_architecture}} state=present
+  tags: java
+

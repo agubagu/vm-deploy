@@ -1,0 +1,5 @@
+---
+# vars file for ansible-icinga2-client
+
+icinga2_server: monitoring.local
+ticket_salt: 9b0edff30badb9f81ca5527365a64ff6

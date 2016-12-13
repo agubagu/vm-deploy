@@ -1,0 +1,10 @@
+[Unit]
+Description=Java HTTP Listener
+
+[Service]
+User=nginx 
+ExecStart=/usr/bin/java -Xmx128m -jar /usr/local/java_http/{{ app_name }}
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

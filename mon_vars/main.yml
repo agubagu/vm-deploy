@@ -1,0 +1,7 @@
+---
+# Custom variables for monitoring
+hosts:
+  - ip: 192.168.49.11
+    alias: deploy.local
+  - ip: 192.168.49.10
+    alias: monitoring.local

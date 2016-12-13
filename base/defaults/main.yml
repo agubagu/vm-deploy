@@ -1,0 +1,14 @@
+---
+#handlers for base
+packages:
+  - lsof
+  - perf
+  - wget
+  - strace
+  - tcpdump
+  - sysstat
+  - net-tools
+  - bind-utils
+  - traceroute
+  - bc
+  - siege

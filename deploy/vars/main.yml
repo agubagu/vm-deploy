@@ -1,0 +1,4 @@
+# variables for deployment
+app_version: "v1.5"
+app_name: "java_http.jar"
+git_repo: "https://github.com/agubagu/deploy-test.git"

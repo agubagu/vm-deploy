@@ -1,0 +1,15 @@
+---
+
+- hosts:
+    - 127.0.0.1
+  roles:
+    - base
+    - repleo.hosts
+    - java
+    - deploy
+    - certs
+    - jdauphant.nginx
+    - mamercad.icinga2-client
+  vars_files:
+   - client_vars/main.yml
+  become: yes

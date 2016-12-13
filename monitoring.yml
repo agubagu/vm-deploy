@@ -1,0 +1,10 @@
+---
+- hosts: 
+    - 127.0.0.1
+  roles:
+    - base
+    - repleo.hosts
+    - mamercad.icinga2-server
+  vars_files:
+   - mon_vars/main.yml
+  become: yes

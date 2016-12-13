@@ -1,0 +1,8 @@
+---
+# vars file for ansible-icinga2
+
+php_timezone: Europe/Vilnius
+mysql_root_password: root
+icingaadmin_hash: $1$gPGVfVUf$LA6B2Prrt.PzHLXrHvIjb1
+ticket_salt: 9b0edff30badb9f81ca5527365a64ff6
+api_password: icinga2016

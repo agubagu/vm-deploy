@@ -1,0 +1,30 @@
+---
+# Custom varialbles for client
+hosts:
+  - ip: 192.168.49.11
+    alias: deploy.local
+  - ip: 192.168.49.10
+    alias: monitoring.local
+nginx_sites:
+ default:
+     - listen 80 default_server
+     - server_name deploy.local
+     - location /nginx_status {
+        stub_status on;
+        access_log  off;
+        allow 127.0.0.1;
+       }
+     - location / {
+        proxy_pass http://127.0.0.1:8080;
+       	proxy_http_version 1.1;
+       }
+ default_ssl:
+     - listen 443 ssl
+     - server_name deploy.local
+     - ssl_certificate /etc/certificates/server.crt
+     - ssl_certificate_key /etc/certificates/server.key
+     - ssl_protocols TLSv1 TLSv1.1 TLSv1.2
+     - location / {
+        proxy_pass http://127.0.0.1:8080;
+       	proxy_http_version 1.1;
+       }
