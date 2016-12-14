@@ -25,7 +25,7 @@ Command:
 vagrant ssh monitoring
 ansible-playbook /vagrant/monitoring.yml --connection=local
 ```
-# For Windows users: 
+#### For Windows users: 
 If you don't have ssh.exe installed, you can connect to minitoring machine through Putty.
 IP: 127.0.0.1 Port: 2222. User: vagrant Password: vagrant2016
 
@@ -38,7 +38,7 @@ Command:
 vagrant ssh deploy
 ansible-playbook /vagrant/client_install.yml --connection=local
 ```
-# For Windows users: 
+#### For Windows users: 
 If you don't have ssh.exe installed, you can connect to minitoring machine through Putty.
 IP: 127.0.0.1 Port: 2200. User: vagrant Password: vagrant2016
 
