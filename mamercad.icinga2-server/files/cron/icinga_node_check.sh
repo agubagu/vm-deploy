@@ -1,5 +1,4 @@
 #!/bin/bash
-
 ICINGA_BIN="/usr/sbin/icinga2"
 ICINGA_TMP_FILE="/tmp/icinga_node_count"
 
