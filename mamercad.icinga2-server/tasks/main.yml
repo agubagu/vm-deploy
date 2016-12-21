@@ -211,6 +211,6 @@
 - name: cron job for running check every 1 minute
   cron:
     name: "icinga_node_check"
-    minute: "*/1"
+    minute: "*"
     job: "/home/vagrant/icinga_node_check.sh > /dev/null 2>&1"
   
