@@ -14,7 +14,7 @@ git clone  https://github.com/agubagu/vm-deploy.git
 
 ### VM's booting up
 
-To bootstrap VM's, just run vagrant up command inside vm-deply forlder.
+To bootstrap VM's, just run vagrant up command inside vm-deploy folder.
 
 ### Monitoring system provisioning
 
@@ -29,7 +29,7 @@ ansible-playbook /vagrant/monitoring.yml --connection=local
 If you don't have ssh.exe installed, you can connect to monitoring machine through Putty.
 IP: 127.0.0.1 Port: 2222. User: vagrant Password: vagrant2016
 
-### Application server provsioning
+### Application server provisioning
 
 Now you need to connect to application server and run appropriate playbook on it
 
