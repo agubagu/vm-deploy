@@ -66,7 +66,7 @@ Command:
 ```
    siege -c 20 -b -i 192.168.49.11/test
 ```
-Warning alarm will be raised on 50 req/s limit
+Warning alarm will be raised on 50 req/s limit.
 Critical alarm  will be raised on 100 req/a limit
 
 

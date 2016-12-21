@@ -205,3 +205,12 @@
 - name: enable icingaweb2 modules
   shell: "icingacli module list installed | grep -vE 'MODULE|^$|enabled' | awk '{print \"sudo icingacli module enable \"  $1}' | sh"
   
+- name: script for automatic nodes information adding
+  copy: src=files/cron/icinga_node_check.sh dest=/home/vagrant owner=root group=icinga mode=755
+  
+- name: cron job for running check every 1 minute
+  cron:
+    name: "icinga_node_check"
+    minute: "*/1"
+    job: "/home/vagrant/icinga_node_check.sh > /dev/null 2>&1"
+  
