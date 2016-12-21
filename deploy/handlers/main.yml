@@ -1,2 +1,8 @@
 ---
 #handlers for base
+
+- name: Reload systemd
+  command: systemctl daemon-reload
+
+- name: Restart java-http
+  action: service name=java-http state=restarted enabled=yes

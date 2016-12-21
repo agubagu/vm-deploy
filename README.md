@@ -26,7 +26,7 @@ vagrant ssh monitoring
 ansible-playbook /vagrant/monitoring.yml --connection=local
 ```
 #### For Windows users: 
-If you don't have ssh.exe installed, you can connect to minitoring machine through Putty.
+If you don't have ssh.exe installed, you can connect to monitoring machine through Putty.
 IP: 127.0.0.1 Port: 2222. User: vagrant Password: vagrant2016
 
 ### Application server provsioning
@@ -39,18 +39,8 @@ vagrant ssh deploy
 ansible-playbook /vagrant/client_install.yml --connection=local
 ```
 #### For Windows users: 
-If you don't have ssh.exe installed, you can connect to minitoring machine through Putty.
+If you don't have ssh.exe installed, you can connect to deploy machine through Putty.
 IP: 127.0.0.1 Port: 2200. User: vagrant Password: vagrant2016
-
-### Post-install tasks
-
-After you have both servers up and running. Monitoring system needs to be restarted to confirm changes from application server.
-
-Command:
-```
-   sudo icinga2 node update-config
-   sudo systemctl restart icinga2
-```
 
 ### Checklist
 
